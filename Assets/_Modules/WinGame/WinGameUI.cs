@@ -10,7 +10,6 @@ public class WinGameUI : MonoBehaviour
     [SerializeField] private GameObject WinPanel;
 
     private ConfirmDialogue confirmDialog;
-    private bool isLost;
 
     private void Awake()
     {

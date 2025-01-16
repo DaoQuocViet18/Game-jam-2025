@@ -420,7 +420,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6724684647301015692}
   - component: {fileID: 2268544963639795331}
-  - component: {fileID: 2698048955908024798}
   m_Layer: 0
   m_Name: WinGameUI
   m_TagString: Untagged
@@ -465,18 +464,6 @@ MonoBehaviour:
   homeButton: {fileID: 5510890596068749020}
   WinPanel: {fileID: 4634367037400753866}
   nextSceneLoad: 0
---- !u!114 &2698048955908024798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4133550683940490962}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fb456fd160ba0a4c8af7c405f287d0d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &4634367037400753866
 GameObject:
   m_ObjectHideFlags: 0
