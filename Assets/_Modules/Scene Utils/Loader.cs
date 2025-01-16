@@ -7,7 +7,12 @@ public enum SceneName
 {
     MainMenuScene,
     SelectLevelScene,
-    GameScene,
+    Level1,
+    Level2,
+    Level3,
+    Level4,
+    Level5,
+    Level6,
 }
 
 public class Loader : Singleton<Loader> 
