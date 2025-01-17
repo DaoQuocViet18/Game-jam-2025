@@ -1,11 +1,17 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.PlayerSettings;
 
 public class PauseUI : MonoBehaviour {
     [SerializeField] private Button pauseButton;
     [SerializeField] private Button homeButton;
     [SerializeField] private Button selectLevelButton;
     [SerializeField] private Button resumeButton;
+    [SerializeField] private GameObject mascot;
+    [SerializeField] private float stretchDuration;
+    [SerializeField] private Vector3 stretchScale = new Vector3(5f, 5f, 1f); 
+    [SerializeField] private Vector3 originalScale;
     [SerializeField] private GameObject pausePanel;
 
     private ConfirmDialogue confirmDialog;
@@ -13,6 +19,8 @@ public class PauseUI : MonoBehaviour {
     private bool isPaused;
 
     private void Start() {
+        originalScale = this.mascot.transform.localScale;
+
         pauseButton.onClick.AddListener(() => {
             if (isPaused) {
                 Resume();
@@ -28,6 +36,7 @@ public class PauseUI : MonoBehaviour {
         });
 
         pausePanel.SetActive(false);
+        mascot.SetActive(false);
     }
 
     private void Update() {
@@ -40,8 +49,10 @@ public class PauseUI : MonoBehaviour {
         }
     }
 
-    private void Pause() {
+    private async void Pause() {
         isPaused = true;
+        mascot.SetActive(true);
+        await mascot.transform.DOScale(stretchScale, stretchDuration).AsyncWaitForCompletion();
         PauseController.Instance.Pause();
         pausePanel.SetActive(true);
     }
@@ -54,7 +65,9 @@ public class PauseUI : MonoBehaviour {
 
         UtilClass.PlayTransformFadeOutAnimation(pausePanel.transform, pausePanel.GetComponent<CanvasGroup>(), () => {
             isPaused = false;
+            mascot.SetActive(false);
             PauseController.Instance.Resume();
+            mascot.transform.localScale = originalScale;
             pausePanel.SetActive(false);
         });
     }
