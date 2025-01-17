@@ -1,28 +1,34 @@
 using UnityEngine;
 
-public class TimerManager : Singleton<TimerManager> {
-    [SerializeField] private float timerMax = 10f; 
+public class TimerManager : Singleton<TimerManager>
+{
+    [SerializeField] private float timerMax = 10f;
     private float timer;
 
-    private void Start() {
+    private void Start()
+    {
         timer = timerMax;
     }
 
-    private void Update() {
+    private void Update()
+    {
         timer -= Time.deltaTime;
 
-        if (timer <= 0) {
+        if (timer <= 0)
+        {
             timer = timerMax;
             Debug.Log("TIME UP!");
             EventDispatcher.Dispatch(new EventDefine.OnLoseGame());
         }
-    } 
+    }
 
-    public void SetTimerMax(float timerMax) {
+    public void SetTimerMax(float timerMax)
+    {
         this.timerMax = timerMax;
     }
 
-    public float GetCurrentTime() {
+    public float GetCurrentTime()
+    {
         return timer;
     }
 }

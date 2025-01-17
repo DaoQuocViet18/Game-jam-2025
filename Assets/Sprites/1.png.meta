@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 58706d71d6dabca439f802f71f5ec9e0
+guid: e2a50629c744d7044b53836043a40be4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8737704298123837536
-    second: MouseCursor_0
+      213: 5278992336044710467
+    second: "\u2014Pngtree\u2014blue glowing progress bar_4580395_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,66 +96,27 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MouseCursor_0
+      name: "\u2014Pngtree\u2014blue glowing progress bar_4580395_0"
       rect:
         serializedVersion: 2
-        x: 17
-        y: 17
-        width: 760
-        height: 946
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+        x: 87
+        y: 908
+        width: 1814
+        height: 184
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 135, y: 0, z: 171, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0afbce53c307db680800000000000000
-      internalID: -8737704298123837536
+      spriteID: 34a54f17f8fb24940800000000000000
+      internalID: 5278992336044710467
       vertices: []
       indices: 
       edges: []
@@ -164,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c26406a89d28b774abaa4ba2555c1697
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      MouseCursor_0: -8737704298123837536
+      "\u2014Pngtree\u2014blue glowing progress bar_4580395_0": 5278992336044710467
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
