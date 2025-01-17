@@ -2,7 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
 [RequireComponent(typeof(SpriteRenderer))]
-public class DragController : MonoBehaviour 
+public class DragController : MonoBehaviour
 {
     private const float DRAG_SPEED = 40f;
     private static int currentMaxSortingOrder = 0;
@@ -20,7 +20,7 @@ public class DragController : MonoBehaviour
     {
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
-        
+
         currentMaxSortingOrder++;
         spriteRenderer.sortingOrder = currentMaxSortingOrder;
 

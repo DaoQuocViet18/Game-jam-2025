@@ -6,7 +6,12 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private float levelTimeMax;
 
     [SerializeField] private int MaxPoint = 4;
-    private int currentPoint = 0;
+
+    [SerializeField] Level[] level;
+    [SerializeField] private int currentPoint = 0;
+    int currentLevel = 0;
+
+    // [SerializeField] private float levelTimeMax;
 
     private void OnEnable()
     {
@@ -25,6 +30,8 @@ public class GameManager : Singleton<GameManager>
     private void Start()
     {
         //AudioManager.Instance.PlayMusic(GameAudioClip.BGM_PLAYING, -10f);
+
+        onLoadLevel(0);
     }
 
     private void Update()
@@ -36,16 +43,26 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
+    void onLoadLevel(int levelindex)
+    {
+        Debug.Log("load level" + levelindex);
+        currentLevel = levelindex;
+        MaxPoint = level[currentLevel].MaxPoint;
+    }
+
     private void onIncreasePoint(IEventParam param)
     {
         currentPoint++;
         if (currentPoint == MaxPoint)
+        {
             activeWinGame();
+        }
     }
 
     void activeWinGame()
     {
         EventDispatcher.Dispatch(new EventDefine.OnWinGame());
+        Debug.Log("Phát sự kiện chiến thắng.");
     }
 
     void setDefualtPoint()

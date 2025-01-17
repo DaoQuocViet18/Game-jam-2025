@@ -78,6 +78,7 @@ public class WinGameUI : MonoBehaviour
 
     private void OnWinGame(IEventParam param)
     {
+        Debug.Log("WIN");
         ShowWinPanel();
     }
 }

@@ -29,6 +29,7 @@ public class ActiveObject : MonoBehaviour
                     gameObjectValues[i].SetActive(true); // Kích hoạt GameObject tương ứng
                     Debug.Log($"Đã kích hoạt {gameObjectValues[i].name}");
                     EventDispatcher.Dispatch(new EventDefine.OnIncreasePoint());
+
                     DustAndShrinkEffectController.Instance.StretchAndShrinkAnimation(impactObj, 0.5f, 0.5f, new Vector3(1f, 2f, 1f));
                     ChatBubble.Create(transform, new Vector3(0, 1), "Thank you ill take that");
                     AudioManager.Instance.PlaySoundWithRandomPitch(GameAudioClip.POP);

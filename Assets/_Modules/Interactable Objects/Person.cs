@@ -1,7 +1,8 @@
 using UnityEngine;
 
 [RequireComponent(typeof(ActiveObject))]
-public class Person : MonoBehaviour, IInteractableObject {
+public class Person : MonoBehaviour, IInteractableObject
+{
     [SerializeField] private ActiveObject ActiveObject;
 
     private void Reset()
@@ -22,7 +23,9 @@ public class Person : MonoBehaviour, IInteractableObject {
         Debug.Log(transform.name + ": Load ActiveObject", gameObject);
     }
 
-    public void Interact(GameObject targetObject) {
+    public void Interact(GameObject targetObject)
+    {
+        Debug.Log("targetObject: " + targetObject);
         ActiveObject.Active(targetObject, gameObject);
     }
 }

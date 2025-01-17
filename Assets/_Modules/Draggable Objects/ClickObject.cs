@@ -3,28 +3,35 @@ using UnityEngine;
 
 public class ClickObject : MonoBehaviour
 {
-    [SerializeField] float timeDelayInterval = 2.0f;
+    [SerializeField] float timeDelayInterval = 0.2f;
+
+    bool isClick = false;
 
     void OnMouseUp()
     {
-        Debug.Log("UPPPPP");
-
         Sequence sequence = DOTween.Sequence();
 
-        ChatBubble.Create(transform, new Vector3(0, 1), "Click and detroy this");
+        // ChatBubble.Create(transform, new Vector3(0, 1), "Click and detroy this");
 
-        sequence.AppendInterval(timeDelayInterval);
-        sequence.Append(transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InBack));
-        if (TryGetComponent<SpriteRenderer>(out SpriteRenderer spriteRenderer))
+        if (!isClick)
         {
-            sequence.Join(spriteRenderer.DOFade(0, 0.5f));
+            isClick = true;
+
+            sequence.AppendInterval(timeDelayInterval);
+            sequence.Append(transform.DOScale(Vector3.zero, 0.5f).SetEase(Ease.InBack));
+            if (TryGetComponent<SpriteRenderer>(out SpriteRenderer spriteRenderer))
+            {
+                sequence.Join(spriteRenderer.DOFade(0, 0.5f));
+            }
+            sequence.OnComplete(() =>
+            {
+                Destroy(gameObject);
+            });
+
+            EventDispatcher.Dispatch(new EventDefine.OnIncreasePoint());
+
+            AudioManager.Instance.PlaySoundWithRandomPitch(GameAudioClip.POP);
         }
 
-        sequence.OnComplete(() =>
-        {
-            Destroy(gameObject);
-        });
-
-        AudioManager.Instance.PlaySoundWithRandomPitch(GameAudioClip.POP);
     }
 }
