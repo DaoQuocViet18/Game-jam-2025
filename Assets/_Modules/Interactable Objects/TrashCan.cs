@@ -23,10 +23,6 @@ public class TrashCan : MonoBehaviour, IInteractableObject
 
     public void Interact(GameObject targetObject)
     {
-        ActiveObject.Active(targetObject);
-        Destroy(targetObject);
-        ChatBubble.Create(transform, new Vector3(0, 1), "Bye bye object");
-        AudioManager.Instance.PlaySoundWithRandomPitch(GameAudioClip.POP);
-        gameObject.SetActive(false);
+        ActiveObject.Active(targetObject, gameObject);
     }
 }

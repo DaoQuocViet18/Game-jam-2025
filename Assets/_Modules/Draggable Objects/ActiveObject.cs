@@ -7,7 +7,7 @@ public class ActiveObject : MonoBehaviour
     [SerializeField] private GameObject[] gameObjectKeys; // Các GameObject đầu vào
     [SerializeField] private GameObject[] gameObjectValues; // Các GameObject cần kích hoạt
 
-    public void Active(GameObject obj)
+    public void Active(GameObject impactObj, GameObject staticObj)
     {
         // Kiểm tra mảng đã được khởi tạo và có cùng kích thước
         if (gameObjectKeys == null || gameObjectValues == null || gameObjectKeys.Length != gameObjectValues.Length)
@@ -20,14 +20,20 @@ public class ActiveObject : MonoBehaviour
         for (int i = 0; i < gameObjectKeys.Length; i++)
         {
             Debug.Log("gameObjectKeys[i]: " + gameObjectKeys[i]);
-            Debug.Log("obj: " + obj);
-            if (gameObjectKeys[i] == obj) // Nếu obj khớp với phần tử trong mảng gameObjectKeys
+            Debug.Log("obj: " + impactObj);
+            if (gameObjectKeys[i] == impactObj) // Nếu obj khớp với phần tử trong mảng gameObjectKeys
             {
                 Debug.Log("gameObjectKeys[i]: " + gameObjectKeys[i]);
                 if (gameObjectValues[i] != null)
                 {
                     gameObjectValues[i].SetActive(true); // Kích hoạt GameObject tương ứng
                     Debug.Log($"Đã kích hoạt {gameObjectValues[i].name}");
+                    EventDispatcher.Dispatch(new EventDefine.OnIncreasePoint());
+                    DustAndShrinkEffectController.Instance.StretchAndShrinkAnimation(impactObj, 0.5f, 0.5f, new Vector3(1f, 2f, 1f));
+                    ChatBubble.Create(transform, new Vector3(0, 1), "Thank you ill take that");
+                    AudioManager.Instance.PlaySoundWithRandomPitch(GameAudioClip.POP);
+                    Destroy(impactObj);
+                    Destroy(staticObj);
                 }
                 else
                 {
