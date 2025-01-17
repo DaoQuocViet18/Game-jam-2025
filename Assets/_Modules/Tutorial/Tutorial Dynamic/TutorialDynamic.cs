@@ -19,6 +19,7 @@ public class TutorialDynamic : MonoBehaviour
         TutorialDynamicController.Instance.DisableObjects();
         mouseCursor.transform.position = new Vector3(drag.transform.position.x, drag.transform.position.y, display);
         StartCursorMovement();
+        Hint.Instance.ActiveHint(target);
     }
 
     private async void StartCursorMovement()
@@ -27,12 +28,15 @@ public class TutorialDynamic : MonoBehaviour
         {
             mouseCursor.GetComponent<SpriteRenderer>().sortingOrder = drag.GetComponent<SpriteRenderer>().sortingOrder + 1;
 
-            await mouseCursor.transform.DOMove(target.transform.position, duration).SetLoops(-1, LoopType.Restart)
-                .SetEase(Ease.InOutQuad) 
-                .AsyncWaitForCompletion(); 
+            var tween = mouseCursor.transform.DOMove(target.transform.position, duration)
+                .SetEase(Ease.InOutQuad);
+
+            await tween.AsyncWaitForCompletion();
 
             if (drag == null || !drag.activeInHierarchy)
+            {
                 break; 
+            }    
 
             mouseCursor.transform.position = new Vector3(drag.transform.position.x, drag.transform.position.y, display);
         }

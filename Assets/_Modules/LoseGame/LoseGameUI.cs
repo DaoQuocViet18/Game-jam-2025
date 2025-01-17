@@ -8,8 +8,6 @@ public class LoseGameUI : MonoBehaviour
     [SerializeField] private Button homeButton;
     [SerializeField] private GameObject LosePanel;
 
-    private bool isLost;
-
     private void Awake()
     {
         replayButton.onClick.AddListener(() => Loader.Instance.LoadWithFade(SceneName.Level1));
