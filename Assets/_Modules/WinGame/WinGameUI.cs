@@ -16,8 +16,20 @@ public class WinGameUI : MonoBehaviour
         nextButton.onClick.AddListener(OnNextLevelBtnClick);
         replayButton.onClick.AddListener(OnReplayBtnClick);
         homeButton.onClick.AddListener(OnHomeBtnClick);
+
+        WinPanel.SetActive(false);
     }
-    
+
+    private void OnEnable()
+    {
+        EventDispatcher.Add<EventDefine.OnWinGame>(OnWinGame);
+    }
+
+    private void OnDisable()
+    {
+        EventDispatcher.Remove<EventDefine.OnWinGame>(OnWinGame);
+    }
+
     private void OnNextLevelBtnClick()
     {
         // Move to next level
@@ -29,29 +41,29 @@ public class WinGameUI : MonoBehaviour
             PlayerPrefs.SetInt("levelAt", nextSceneLoad);
         }
     }
-    
+
     private void OnReplayBtnClick()
     {
         // Replay current level
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-        
+
     private void OnHomeBtnClick()
     {
         // Go to home scene
         Loader.Instance.LoadWithFade(SceneName.MainMenuScene);
     }
-    
+
     public void ShowWinPanel()
     {
         WinPanel.SetActive(true);
     }
-    
+
     public void HideWinPanel()
     {
         WinPanel.SetActive(false);
     }
-    
+
     public void ShowConfirmDialogue(ConfirmDialogue confirmDialogue)
     {
         confirmDialog = confirmDialogue;

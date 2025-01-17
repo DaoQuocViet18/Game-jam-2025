@@ -1,16 +1,47 @@
+using System;
 using UnityEngine;
 
-public class GameManager : Singleton<GameManager> {
+public class GameManager : Singleton<GameManager>
+{
     [SerializeField] private float levelTimeMax;
 
-    private void Start() {
+    private int currentPoint = 0;
+
+    private void OnEnable()
+    {
+        // Đăng ký sự kiện OnLoseGame
+        EventDispatcher.Add<EventDefine.OnIncreasePoint>(onIncreasePoint);
+    }
+
+    private void OnDisable()
+    {
+        // Hủy đăng ký sự kiện khi đối tượng bị hủy
+        EventDispatcher.Remove<EventDefine.OnIncreasePoint>(onIncreasePoint);
+    }
+
+
+
+    private void Start()
+    {
         //AudioManager.Instance.PlayMusic(GameAudioClip.BGM_PLAYING, -10f);
     }
 
-    private void Update() {
+    private void Update()
+    {
         // for testing
-        if (Input.GetKeyDown(KeyCode.Space)) {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
             AudioManager.Instance.PlaySound(GameAudioClip.POP);
         }
+    }
+
+    private void onIncreasePoint(IEventParam param)
+    {
+        currentPoint++;
+    }
+
+    void setDefualtPoint()
+    {
+        currentPoint = 0;
     }
 }

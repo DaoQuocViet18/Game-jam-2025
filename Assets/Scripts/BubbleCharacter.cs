@@ -21,7 +21,7 @@ public class BubbleCharacter : MonoBehaviour
         {
             spriteRenderer.sprite = nextHeadSprite;
         }));
-
+        mySequence.Append(head.transform.DOScaleY(2.1f, 0.3f));
         mySequence.Append(gameObject.transform.DOMoveY(7.5f, 2).SetEase(Ease.OutFlash));
 
         mySequence.Play();
