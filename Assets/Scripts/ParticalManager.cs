@@ -5,7 +5,9 @@ public enum BubbleColor
 {
     Blue,
     Yellow,
-    Orange
+    Orange,
+    White,
+    Purple
 }
 
 public class ParticleManager : MonoBehaviour
@@ -22,6 +24,9 @@ public class ParticleManager : MonoBehaviour
     [SerializeField] private Texture blueTexture;
     [SerializeField] private Texture yellowTexture;
     [SerializeField] private Texture orangeTexture;
+    [SerializeField] private Texture whiteTexture;
+    [SerializeField] private Texture purpleTexture;
+
 
     private void Awake()
     {
@@ -78,6 +83,12 @@ public class ParticleManager : MonoBehaviour
                     case BubbleColor.Orange:
                         selectedTexture = orangeTexture;
                         break;
+                    case BubbleColor.White:
+                        selectedTexture = whiteTexture;
+                        break;
+                    case BubbleColor.Purple:
+                        selectedTexture = purpleTexture;
+                        break;   
                 }
 
                 // Đổi Albedo Map
