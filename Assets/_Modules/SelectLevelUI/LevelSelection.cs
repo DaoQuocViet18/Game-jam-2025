@@ -5,7 +5,8 @@ public class LevelSelection : MonoBehaviour
 {
     [SerializeField] private Button quitButton;
     [SerializeField] private Button[] levelButtons; // Mảng các nút level
-
+    public GameObject popupPanel;
+    public Button closeButton;
     private void Awake()
     {
         quitButton.onClick.AddListener(() => {
@@ -34,5 +35,15 @@ public class LevelSelection : MonoBehaviour
             if (i > levelAt)
                 levelButtons[i].interactable = false;
         }
+        closeButton.onClick.AddListener(ClosePopup);
+        ShowPopup(); 
+    }
+    public void ShowPopup()
+    {
+        popupPanel.SetActive(true);
+    }
+    public void ClosePopup()
+    {
+        popupPanel.SetActive(false);
     }
 }

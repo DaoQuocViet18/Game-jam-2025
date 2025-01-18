@@ -7444,10 +7444,18 @@ PrefabInstance:
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5165146741041875562, guid: af7becf8eec50b449a30215dfbd6c183, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 2198882964009394354, guid: 3fe561206454fb04186808899ee8a61a, type: 2}
     - target: {fileID: 7148987167060778441, guid: af7becf8eec50b449a30215dfbd6c183, type: 3}
       propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7148987167060778441, guid: af7becf8eec50b449a30215dfbd6c183, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: -6684816603480020653, guid: 3fe561206454fb04186808899ee8a61a, type: 2}
     - target: {fileID: 7496044183445757861, guid: af7becf8eec50b449a30215dfbd6c183, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -30,8 +30,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 210304588469383317}
   - {fileID: 2883696911001047425}
+  - {fileID: 210304588469383317}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2665791600193994848
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 348c45957e6764c4ab1737a12825a128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 3fe561206454fb04186808899ee8a61a, type: 2}
 --- !u!1 &1540671459872801164
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,9 +88,9 @@ AudioSource:
   m_GameObject: {fileID: 1540671459872801164}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 2198882964009394354, guid: 68828813f12f1184b9779abb42e72500, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 8ba1c2d021c4d2b44b57cb94e3e73ec7, type: 3}
-  m_Resource: {fileID: 8300000, guid: 8ba1c2d021c4d2b44b57cb94e3e73ec7, type: 3}
+  OutputAudioMixerGroup: {fileID: 2198882964009394354, guid: 3fe561206454fb04186808899ee8a61a, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 0c16ae10bc9d0ff4eacc043c151a9f57, type: 3}
+  m_Resource: {fileID: 8300000, guid: 0c16ae10bc9d0ff4eacc043c151a9f57, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -216,9 +217,9 @@ AudioSource:
   m_GameObject: {fileID: 6760744296964836037}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -6684816603480020653, guid: 68828813f12f1184b9779abb42e72500, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 8ba1c2d021c4d2b44b57cb94e3e73ec7, type: 3}
-  m_Resource: {fileID: 8300000, guid: 8ba1c2d021c4d2b44b57cb94e3e73ec7, type: 3}
+  OutputAudioMixerGroup: {fileID: -6684816603480020653, guid: 3fe561206454fb04186808899ee8a61a, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 950013fefd3589149a9bbbf1fe08431c, type: 3}
+  m_Resource: {fileID: 8300000, guid: 950013fefd3589149a9bbbf1fe08431c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
