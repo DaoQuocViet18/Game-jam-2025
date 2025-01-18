@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f597b91f5767aa24aaabce044ba77f94
+guid: 43c7b30ec7a66b245ae968ec8a3fee4e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7464799716672944523
-    second: _Group_ 38_0
+      213: 567963424932683608
+    second: Clock_0_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: _Group_ 38_0
+      name: Clock_0_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 70
-        height: 65
+        width: 93
+        height: 131
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b893ab7cacb489760800000000000000
-      internalID: 7464799716672944523
+      spriteID: 85fd68cc9bfc1e700800000000000000
+      internalID: 567963424932683608
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      _Group_ 38_0: 7464799716672944523
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -834,7 +834,36 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Home_Items 1_0: -5797958030444644222
+      Home_Items 1_1: -2208068555107720641
+      Home_Items 1_10: 5208905041760346535
+      Home_Items 1_11: -5672956722718360809
+      Home_Items 1_12: -6769680659336374825
+      Home_Items 1_13: 5221059924907309910
+      Home_Items 1_14: -9020105101266890333
+      Home_Items 1_15: 6787581545884997883
+      Home_Items 1_16: -8082877427101970230
+      Home_Items 1_17: -3730974074553937091
+      Home_Items 1_18: 3836820294015428212
+      Home_Items 1_19: -2107262436349194574
+      Home_Items 1_2: -7841101736389565886
+      Home_Items 1_20: -2396760519609441227
+      Home_Items 1_21: -3996170071991945739
+      Home_Items 1_22: -6229574605965694571
+      Home_Items 1_23: -4113759131519126477
+      Home_Items 1_24: -695092659166698487
+      Home_Items 1_25: -1109813467162889395
+      Home_Items 1_26: 7143066556427313737
+      Home_Items 1_27: -7706250993139059971
+      Home_Items 1_28: -1411359936343152762
+      Home_Items 1_3: -1406665125074411592
+      Home_Items 1_4: 2488035424993740333
+      Home_Items 1_5: 4065491602100814255
+      Home_Items 1_6: 8173219020014195593
+      Home_Items 1_7: 8266437305165804354
+      Home_Items 1_8: -459433367444886436
+      Home_Items 1_9: -978110397100559151
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

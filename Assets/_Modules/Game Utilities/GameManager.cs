@@ -97,6 +97,18 @@ public class GameManager : Singleton<GameManager>
         return currentLevel;
     }
 
+    public string getCurrentHintText()
+    {
+        switch (currentLevel)
+        {
+            case 0: return "Hình như trong ống nước có gì đó, đập vỡ nó ra xem sao?";
+            case 1: return "Tạo vũng nước từ cái chậu nước của bà kia đi rồi kéo cậu bé vào xem nào, có thế cũng không làm được.";
+            case 2: return "Chai bia cuối cùng, hãy để bạn bong bóng nhỏ nốc cạn đêm nay nào!";
+        }
+
+        return "";
+    }
+
     public float getCurrenProgress()
     {
         return (float)currentPoint / MaxPoint;
@@ -127,7 +139,7 @@ public class GameManager : Singleton<GameManager>
         });
     }
 
-    
+
     void setDefualtPoint()
     {
         currentPoint = 0;
