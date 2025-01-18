@@ -4,6 +4,7 @@ using UnityEngine;
 public class ClickObject : MonoBehaviour
 {
     [SerializeField] float timeDelayInterval = 0.2f;
+    [SerializeField] GameObject showObject;
 
     bool isClick = false;
 
@@ -31,6 +32,8 @@ public class ClickObject : MonoBehaviour
             EventDispatcher.Dispatch(new EventDefine.OnIncreasePoint());
 
             AudioManager.Instance.PlaySoundWithRandomPitch(GameAudioClip.POP);
+
+            showObject?.SetActive(true);
         }
 
     }

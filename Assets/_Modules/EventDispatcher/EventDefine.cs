@@ -10,6 +10,11 @@ public partial class EventDefine : IEventParam
 
     }
 
+    public struct OnUpdateProgressBar : IEventParam
+    {
+
+    }
+
     public struct OnTutorialGame : IEventParam
     {
         public bool isTutorial;

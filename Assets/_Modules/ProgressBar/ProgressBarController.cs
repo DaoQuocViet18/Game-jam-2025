@@ -1,24 +1,35 @@
+using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ProgressBarController : MonoBehaviour
 {
-    public Slider progressBar;
-    public Button clickButton;
-    private float progress = 0f;
-    private const float increment = 0.1f; // Giá trị tăng mỗi lần click (10%)
+    [SerializeField] Image progress;
+    [SerializeField] float progressScale = 0;
 
-    void Start()
+    private void OnEnable()
     {
-        clickButton.onClick.AddListener(OnButtonClick);
-        progressBar.value = progress;
+        // Đăng ký sự kiện OnLoseGame
+        EventDispatcher.Add<EventDefine.OnUpdateProgressBar>(OnUpdateProgressBar);
     }
-    void OnButtonClick()
+
+    private void OnDisable()
     {
-        if (progressBar.value < 1f)
+        // Hủy đăng ký sự kiện khi đối tượng bị hủy
+        EventDispatcher.Remove<EventDefine.OnUpdateProgressBar>(OnUpdateProgressBar);
+    }
+
+    void setProgress(float amount)
+    {
+        DOVirtual.Float(progress.fillAmount, amount, 0.2f, value =>
         {
-            progress += increment;
-            progressBar.value = progress;
-        }
+            progress.fillAmount = value;
+        });
+    }
+
+    void OnUpdateProgressBar(IEventParam param)
+    {
+        setProgress(GameManager.Instance.getCurrenProgress());
     }
 }

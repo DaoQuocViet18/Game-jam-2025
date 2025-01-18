@@ -1,6 +1,7 @@
 using System;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
@@ -14,7 +15,7 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] static int maxCurrentLevel = 0;
     [SerializeField] static int currentLevel = 0;
 
-    public static int MaxCurrentLevel { get => maxCurrentLevel;}
+    public static int MaxCurrentLevel { get => maxCurrentLevel; }
     public static int CurrentLevel { get => currentLevel; set => currentLevel = value; }
 
     // [SerializeField] private float levelTimeMax;
@@ -56,7 +57,7 @@ public class GameManager : Singleton<GameManager>
             Debug.Log("load level" + levelindex);
             currentLevel = levelindex;
         }
-       
+
         MaxPoint = levels[currentLevel].MaxPoint;
 
         foreach (var level in levels)
@@ -65,11 +66,17 @@ public class GameManager : Singleton<GameManager>
         }
 
         levels[currentLevel].gameObject.SetActive(true);
+        EventDispatcher.Dispatch(new EventDefine.OnUpdateProgressBar());
     }
 
     public int getCurrentLevel()
     {
         return currentLevel;
+    }
+
+    public float getCurrenProgress()
+    {
+        return (float)currentPoint / MaxPoint;
     }
 
     private void onIncreasePoint(IEventParam param)
@@ -79,6 +86,8 @@ public class GameManager : Singleton<GameManager>
         {
             activeWinGame();
         }
+
+        EventDispatcher.Dispatch(new EventDefine.OnUpdateProgressBar());
     }
 
     void activeWinGame()

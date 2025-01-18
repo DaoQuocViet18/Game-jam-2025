@@ -41,9 +41,9 @@ public class WinGameUI : MonoBehaviour
         //     PlayerPrefs.SetInt("levelAt", nextSceneLoad);
         // }
 
-        Loader.Instance.LoadWithFade(SceneName.GameScene);
         int indexLevel = GameManager.Instance.getCurrentLevel();
         GameManager.Instance.onLoadLevel(++indexLevel);
+        Loader.Instance.LoadWithFade(SceneName.GameScene);
     }
 
     private void OnReplayBtnClick()
