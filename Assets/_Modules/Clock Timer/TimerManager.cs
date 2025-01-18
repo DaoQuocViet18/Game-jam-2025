@@ -31,4 +31,9 @@ public class TimerManager : Singleton<TimerManager>
     {
         return timer;
     }
+
+    //public void SetCurrentTime(float time)
+    //{
+    //    this.timer = time;
+    //}
 }

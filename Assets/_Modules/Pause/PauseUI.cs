@@ -1,7 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.PlayerSettings;
 
 public class PauseUI : MonoBehaviour {
     [SerializeField] private Button pauseButton;
