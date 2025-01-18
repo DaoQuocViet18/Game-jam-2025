@@ -7,6 +7,8 @@ public class ActiveObject : MonoBehaviour
     [SerializeField] private GameObject[] gameObjectKeys; // Các GameObject đầu vào
     [SerializeField] private GameObject[] gameObjectValues; // Các GameObject cần kích hoạt
 
+    [SerializeField] BubbleColor bubbleColor;
+
     public void Active(GameObject impactObj, GameObject staticObj)
     {
         // Kiểm tra mảng đã được khởi tạo và có cùng kích thước
@@ -26,6 +28,8 @@ public class ActiveObject : MonoBehaviour
                 Debug.Log("gameObjectKeys[i]: " + gameObjectKeys[i]);
                 if (gameObjectValues[i] != null)
                 {
+                    ParticleManager.Instance.PlayParticle(gameObjectValues[i].transform.position, gameObjectValues[i].transform.rotation, bubbleColor);
+
                     gameObjectValues[i].SetActive(true); // Kích hoạt GameObject tương ứng
                     Debug.Log($"Đã kích hoạt {gameObjectValues[i].name}");
                     EventDispatcher.Dispatch(new EventDefine.OnIncreasePoint());
