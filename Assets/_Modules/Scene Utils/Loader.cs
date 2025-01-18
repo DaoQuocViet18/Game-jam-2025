@@ -8,6 +8,7 @@ public enum SceneName
     MainMenuScene,
     SelectLevelScene,
     GameScene,
+    EndingScene,
     Level1,
     Level2,
     Level3,

@@ -135,7 +135,14 @@ public class GameManager : Singleton<GameManager>
         Debug.Log("levels.Length: " + levels.Length);
         levels[currentLevel].onWinGame(() =>
         {
-            EventDispatcher.Dispatch(new EventDefine.OnWinGame());
+            if (currentLevel + 1 == levels.Length)
+            {
+                Loader.Instance.LoadWithFade(SceneName.EndingScene);
+            }
+            else
+            {
+                EventDispatcher.Dispatch(new EventDefine.OnWinGame());
+            }
         });
     }
 
