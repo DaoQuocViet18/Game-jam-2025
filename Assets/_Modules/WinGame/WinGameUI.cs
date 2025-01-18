@@ -84,6 +84,7 @@ public class WinGameUI : MonoBehaviour
     private void OnWinGame(IEventParam param)
     {
         Debug.Log("WIN");
+        AudioManager.Instance.PlaySound(GameAudioClip.REWARD_SOUND);
         ShowWinPanel();
     }
 }

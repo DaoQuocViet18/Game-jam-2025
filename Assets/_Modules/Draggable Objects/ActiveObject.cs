@@ -36,7 +36,7 @@ public class ActiveObject : MonoBehaviour
 
                     DustAndShrinkEffectController.Instance.StretchAndShrinkAnimation(impactObj, 0.5f, 0.5f, new Vector3(1f, 2f, 1f));
                     ChatBubble.Create(transform, new Vector3(0, 1), "Thank you ill take that");
-                    AudioManager.Instance.PlaySoundWithRandomPitch(GameAudioClip.POP);
+                    AudioManager.Instance.PlaySoundWithRandomPitch(GameAudioClip.POP_SOUND_EFFECT);
                     Destroy(impactObj);
                     Destroy(staticObj);
                 }

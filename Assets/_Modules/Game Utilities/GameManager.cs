@@ -46,7 +46,7 @@ public class GameManager : Singleton<GameManager>
         // for testing
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            AudioManager.Instance.PlaySound(GameAudioClip.POP);
+            AudioManager.Instance.PlaySound(GameAudioClip.POP_SOUND_EFFECT);
         }
     }
 
