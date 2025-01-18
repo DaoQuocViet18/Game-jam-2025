@@ -1,25 +1,32 @@
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EndingController : MonoBehaviour
 {
     [SerializeField] Camera cam;
     [SerializeField] GameObject character;
     [SerializeField] GameObject BGScroll;
-    [SerializeField] GameObject thankYou;
-    [SerializeField] GameObject homeBtn;
+    [SerializeField] Button exitButton;    
+    [SerializeField] GameObject popupPanel;
 
     private void Start()
     {
         bGScroll();
         characterTween();
         cameraTween();
+        popupPanel.SetActive(false);
+        exitButton.gameObject.SetActive(false);
+        exitButton.onClick.AddListener(() => {
+            Application.Quit();
+        });
+
     }
 
     void bGScroll()
     {
         // Smooth infinite background scrolling
-        BGScroll.transform.DOMoveY(-58.3f, 3.8f)
+        BGScroll.transform.DOMoveY(-58.3f, 2.8f)
          .SetLoops(-1, LoopType.Restart)
          .SetEase(Ease.InOutSine); // Smooth start and end for each loop
     }
@@ -29,20 +36,16 @@ public class EndingController : MonoBehaviour
         // Smooth character bounce with easing
         character.transform.DOMoveY(-3.2f, 0.85f)
          .SetLoops(15, LoopType.Yoyo)
-         .SetEase(Ease.InOutQuad) // Smooth Yoyo effect
-         .OnComplete(() =>
+            .SetEase(Ease.InOutQuad) // Smooth Yoyo effect
+            .OnComplete(() =>
          {
              // Final rise of the character with a smooth finish
-             character.transform.DOMoveY(20f, 2f)
+             character.transform.DOMoveY(10f, 1f) // Shorten the duration
               .SetEase(Ease.OutQuad)
               .OnComplete(() =>
               {
-                  thankYou.transform.DOScale(1.6f, 0.5f)
-                  .OnComplete(() =>
-                  {
-                      homeBtn.SetActive(true);
-                  });
-
+                 EndScene();
+                 ShowPopupAndExitButton(); // Show popup and exit button immediately
               });
          });
     }
@@ -57,9 +60,24 @@ public class EndingController : MonoBehaviour
         .SetEase(Ease.InOutCubic); // Smooth zoom with acceleration and deceleration
     }
 
-    public void OnHomeBtnClick()
+    void EndScene()
     {
-        // Go to home scene
-        Loader.Instance.LoadWithFade(SceneName.MainMenuScene);
+        // No need for Invoke here as we are calling ShowPopupAndExitButton directly
+    }
+
+    void ShowPopupAndExitButton()
+    {
+        ShowPopupPanel();
+        ShowExitButton();
+    }
+
+    void ShowPopupPanel()
+    {
+        popupPanel.SetActive(true);
+    }
+    
+    void ShowExitButton()
+    {
+        exitButton.gameObject.SetActive(true);
     }
 }

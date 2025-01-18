@@ -418,16 +418,16 @@ RectTransform:
   m_GameObject: {fileID: 2167705317607503068}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 5756351588647216009}
   m_Father: {fileID: 1239369785974137001}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -11, y: -256}
-  m_SizeDelta: {x: 160, y: 51.215}
+  m_AnchoredPosition: {x: 0.000011444, y: -249.83713}
+  m_SizeDelta: {x: 86.0455, y: 63.5408}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7037077687750110882
 CanvasRenderer:
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1865463273688771626, guid: 29fb4ffddf8e9b44e9d95733ab54d6d9, type: 3}
+  m_Sprite: {fileID: 1865463273688771626, guid: f4962ae03bc745f4cab1af07b05b864d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1196,8 +1196,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000025988, y: 15.322008}
-  m_SizeDelta: {x: 897.7391, y: 416.5489}
+  m_AnchoredPosition: {x: -0.0000081062, y: 15.322008}
+  m_SizeDelta: {x: 977.8565, y: 416.5489}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &534120979849844228
 CanvasRenderer:
@@ -1231,7 +1231,7 @@ MonoBehaviour:
     c\u1EADu r\u1EA5t nh\u1EDB ng\xF4i nh\xE0 c\u1EE7a m\xECnh tr\xEAn nh\u1EEFng
     \u0111\xE1m m\xE2y. Nh\u01B0ng v\xEC \u1EDF d\u01B0\u1EDBi \u0111\u1EA5t qu\xE1
     l\xE2u khi\u1EBFn c\u1EADu b\u1ECB x\u1EB9p \u0111i \u0111\xF4i ch\xFAt, h\xE3y
-    c\xF9ng gi\xFAp t\xE8o thu th\u1EADp bong b\xF3ng kh\xED \u0111\u1EC3 c\u1EADu
+    c\xF9ng gi\xFAp T\xE8o thu th\u1EADp bong b\xF3ng kh\xED \u0111\u1EC3 c\u1EADu
     c\xF3 th\u1EC3 bay v\u1EC1 nh\xE0 nh\xE9."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ff69e054914297a4a9037700dedbbca7, type: 2}
@@ -1259,8 +1259,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 47
-  m_fontSizeBase: 47
+  m_fontSize: 49.27
+  m_fontSizeBase: 49.27
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
