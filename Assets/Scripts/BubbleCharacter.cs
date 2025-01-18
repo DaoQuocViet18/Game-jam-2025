@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ public class BubbleCharacter : MonoBehaviour
         spriteRenderer = head.GetComponent<SpriteRenderer>();
     }
 
-    public void animGoUp()
+    public void animGoUp(Action callback)
     {
         Sequence mySequence = DOTween.Sequence();
 
@@ -22,7 +23,7 @@ public class BubbleCharacter : MonoBehaviour
             spriteRenderer.sprite = nextHeadSprite;
         }));
         mySequence.Append(head.transform.DOScaleY(2.1f, 0.3f));
-        mySequence.Append(gameObject.transform.DOMoveY(7.5f, 2).SetEase(Ease.OutFlash));
+        mySequence.Append(gameObject.transform.DOMoveY(7.5f, 2).SetEase(Ease.OutFlash).OnComplete(callback.Invoke));
 
         mySequence.Play();
 

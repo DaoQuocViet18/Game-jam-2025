@@ -1,5 +1,7 @@
 using System;
+using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -7,9 +9,9 @@ public class GameManager : Singleton<GameManager>
 
     [SerializeField] private int MaxPoint = 4;
 
-    [SerializeField] Level[] level;
+    [SerializeField] Level[] levels;
     [SerializeField] private int currentPoint = 0;
-    int currentLevel = 0;
+    [SerializeField] static int currentLevel = 0;
 
     // [SerializeField] private float levelTimeMax;
 
@@ -31,7 +33,7 @@ public class GameManager : Singleton<GameManager>
     {
         //AudioManager.Instance.PlayMusic(GameAudioClip.BGM_PLAYING, -10f);
 
-        onLoadLevel(0);
+        onLoadLevel(currentLevel);
     }
 
     private void Update()
@@ -43,11 +45,23 @@ public class GameManager : Singleton<GameManager>
         }
     }
 
-    void onLoadLevel(int levelindex)
+    public void onLoadLevel(int levelindex)
     {
         Debug.Log("load level" + levelindex);
         currentLevel = levelindex;
-        MaxPoint = level[currentLevel].MaxPoint;
+        MaxPoint = levels[currentLevel].MaxPoint;
+
+        foreach (var level in levels)
+        {
+            level.gameObject.SetActive(false);
+        }
+
+        levels[currentLevel].gameObject.SetActive(true);
+    }
+
+    public int getCurrentLevel()
+    {
+        return currentLevel;
     }
 
     private void onIncreasePoint(IEventParam param)
@@ -61,8 +75,10 @@ public class GameManager : Singleton<GameManager>
 
     void activeWinGame()
     {
-        EventDispatcher.Dispatch(new EventDefine.OnWinGame());
-        Debug.Log("Phát sự kiện chiến thắng.");
+        levels[currentLevel].onWinGame(() =>
+        {
+            EventDispatcher.Dispatch(new EventDefine.OnWinGame());
+        });
     }
 
     void setDefualtPoint()

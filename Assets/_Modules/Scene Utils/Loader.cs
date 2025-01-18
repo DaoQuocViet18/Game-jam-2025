@@ -7,6 +7,7 @@ public enum SceneName
 {
     MainMenuScene,
     SelectLevelScene,
+    GameScene,
     Level1,
     Level2,
     Level3,
@@ -15,7 +16,7 @@ public enum SceneName
     Level6,
 }
 
-public class Loader : Singleton<Loader> 
+public class Loader : Singleton<Loader>
 {
 
     public void Load(SceneName targetScene)
@@ -24,7 +25,8 @@ public class Loader : Singleton<Loader>
         SceneManager.LoadSceneAsync(targetScene.ToString());
     }
 
-    public async void LoadWithFade(SceneName targetScene) {
+    public async void LoadWithFade(SceneName targetScene)
+    {
         Transform fadeTransitionPrefab = Resources.Load<Transform>("pfFadeSceneTransition");
         FadeTransition fadeTransition = Instantiate(fadeTransitionPrefab).GetComponent<FadeTransition>();
         DontDestroyOnLoad(fadeTransition.gameObject);

@@ -10,7 +10,7 @@ public class LoseGameUI : MonoBehaviour
 
     private void Awake()
     {
-        replayButton.onClick.AddListener(() => Loader.Instance.LoadWithFade(SceneName.Level1));
+        replayButton.onClick.AddListener(() => Loader.Instance.LoadWithFade(SceneName.GameScene));
         homeButton.onClick.AddListener(() => Loader.Instance.LoadWithFade(SceneName.MainMenuScene));
 
         LosePanel.SetActive(false);

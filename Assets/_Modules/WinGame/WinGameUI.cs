@@ -32,20 +32,24 @@ public class WinGameUI : MonoBehaviour
 
     private void OnNextLevelBtnClick()
     {
-        // Move to next level
-        SceneManager.LoadScene(nextSceneLoad);
+        // // Move to next level
+        // SceneManager.LoadScene(nextSceneLoad);
 
-        // Setting the next level to be unlocked
-        if (nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
-        {
-            PlayerPrefs.SetInt("levelAt", nextSceneLoad);
-        }
+        // // Setting the next level to be unlocked
+        // if (nextSceneLoad > PlayerPrefs.GetInt("levelAt"))
+        // {
+        //     PlayerPrefs.SetInt("levelAt", nextSceneLoad);
+        // }
+
+        Loader.Instance.LoadWithFade(SceneName.GameScene);
+        int indexLevel = GameManager.Instance.getCurrentLevel();
+        GameManager.Instance.onLoadLevel(++indexLevel);
     }
 
     private void OnReplayBtnClick()
     {
         // Replay current level
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Loader.Instance.LoadWithFade(SceneName.GameScene);
     }
 
     private void OnHomeBtnClick()
