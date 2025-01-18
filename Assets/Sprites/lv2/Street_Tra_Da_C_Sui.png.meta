@@ -348,7 +348,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Street_Tra_Da_C_Sui_0: 6709747914777881402
+      Street_Tra_Da_C_Sui_1: 8391967331814324292
+      Street_Tra_Da_C_Sui_2: -916375465159199946
+      Street_Tra_Da_C_Sui_3: -8685911639668878586
+      Street_Tra_Da_C_Sui_4: 1004607839085251230
+      Street_Tra_Da_C_Sui_5: -6792565812067373318
+      Street_Tra_Da_C_Sui_6: -8541338743223359295
+      Street_Tra_Da_C_Sui_7: -7480465536898362389
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

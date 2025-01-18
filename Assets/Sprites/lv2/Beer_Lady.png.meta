@@ -198,7 +198,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Beer_Lady_0: 7951370821968354073
+      Beer_Lady_1: -5542036513739279403
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Bubble_Banh_Ran_0: 3298423446373911121
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
