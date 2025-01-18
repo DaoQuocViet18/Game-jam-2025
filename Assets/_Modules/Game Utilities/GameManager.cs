@@ -8,10 +8,14 @@ public class GameManager : Singleton<GameManager>
     [SerializeField] private float levelTimeMax;
 
     [SerializeField] private int MaxPoint = 4;
+    [SerializeField] private int currentPoint = 0;
 
     [SerializeField] Level[] levels;
-    [SerializeField] private int currentPoint = 0;
+    [SerializeField] static int maxCurrentLevel = 0;
     [SerializeField] static int currentLevel = 0;
+
+    public static int MaxCurrentLevel { get => maxCurrentLevel;}
+    public static int CurrentLevel { get => currentLevel; set => currentLevel = value; }
 
     // [SerializeField] private float levelTimeMax;
 
@@ -47,8 +51,12 @@ public class GameManager : Singleton<GameManager>
 
     public void onLoadLevel(int levelindex)
     {
-        Debug.Log("load level" + levelindex);
-        currentLevel = levelindex;
+        if (currentLevel <= maxCurrentLevel)
+        {
+            Debug.Log("load level" + levelindex);
+            currentLevel = levelindex;
+        }
+       
         MaxPoint = levels[currentLevel].MaxPoint;
 
         foreach (var level in levels)
@@ -75,6 +83,12 @@ public class GameManager : Singleton<GameManager>
 
     void activeWinGame()
     {
+        if (currentLevel == maxCurrentLevel && maxCurrentLevel < levels.Length - 1)
+        {
+            maxCurrentLevel++;
+        }
+        Debug.Log("MaxCurrentLevel: " + maxCurrentLevel);
+        Debug.Log("levels.Length: " + levels.Length);
         levels[currentLevel].onWinGame(() =>
         {
             EventDispatcher.Dispatch(new EventDefine.OnWinGame());
