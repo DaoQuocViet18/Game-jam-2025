@@ -1,11 +1,34 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
+using static UnityEditor.PlayerSettings;
 
 
 public class SettingMenuUI : MonoBehaviour
 {
- public AudioMixer audioMixer;
- public void SetSound (float sound) 
+    [SerializeField] private GameObject SettingMenuPanel;
+    [SerializeField] private Button SettingBtn;
+    [SerializeField] private Button BackBtn;
+    public AudioMixer audioMixer;
+
+    private void Start()
+    {
+        SettingBtn.onClick.AddListener(OnSetting);
+        BackBtn.onClick.AddListener(OnBack);
+        SettingMenuPanel.SetActive(false);
+    }
+
+    private void OnSetting()
+    {
+        SettingMenuPanel.SetActive(true);
+    }
+
+    private void OnBack()
+    {
+        SettingMenuPanel.SetActive(false);
+    }
+
+    public void SetSound (float sound) 
  {
    audioMixer.SetFloat("sound",  sound);  
  }
