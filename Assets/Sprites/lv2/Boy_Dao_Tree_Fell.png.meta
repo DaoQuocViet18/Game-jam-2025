@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 9403a72b57f0d6d47b344329c4922672
+guid: bacc2741f19417a48a1bcd6aabed0bb7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1865463273688771626
-    second: _Group_ 2_0
+      213: 1999194849941685522
+    second: Boy_Dao_Tree_Fell_0
+  - first:
+      213: 2948091818022024876
+    second: Boy_Dao_Tree_Fell_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,23 +142,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: _Group_ 2_0
+      name: Boy_Dao_Tree_Fell_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 128
-        height: 162
+        x: 1711
+        y: 386
+        width: 1316
+        height: 560
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a2ca1c9b6f473e910800000000000000
-      internalID: 1865463273688771626
+      spriteID: 2158093bf119ebb10800000000000000
+      internalID: 1999194849941685522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy_Dao_Tree_Fell_1
+      rect:
+        serializedVersion: 2
+        x: 2498
+        y: 413
+        width: 501
+        height: 435
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca6307a83e9b9e820800000000000000
+      internalID: 2948091818022024876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boy_Dao_Tree_Fell_2
+      rect:
+        serializedVersion: 2
+        x: 2373
+        y: 1186
+        width: 391
+        height: 392
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1fb8a39f89aad740b78f552a12b6563
+      internalID: 1962526491
       vertices: []
       indices: 
       edges: []
@@ -164,7 +211,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 860b54eadd19ed64f8fe927ee9167941
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +221,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      _Group_ 2_0: 1865463273688771626
+      Boy_Dao_Tree_Fell_2: 1962526491
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

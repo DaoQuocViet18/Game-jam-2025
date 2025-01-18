@@ -6,6 +6,8 @@ public class ClickObject : MonoBehaviour
     [SerializeField] float timeDelayInterval = 0.2f;
     [SerializeField] GameObject showObject;
 
+    [SerializeField] BubbleColor bubbleColor;
+
     bool isClick = false;
 
     void OnMouseUp()
@@ -33,7 +35,9 @@ public class ClickObject : MonoBehaviour
 
             AudioManager.Instance.PlaySoundWithRandomPitch(GameAudioClip.POP);
 
-            showObject?.SetActive(true);
+            if (showObject != null) showObject.SetActive(true);
+
+            ParticleManager.Instance.PlayParticle(this.transform.position, this.transform.rotation, bubbleColor);
         }
 
     }

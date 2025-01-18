@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9403a72b57f0d6d47b344329c4922672
+guid: 4b1baac8f80e4ec42926734336e9ab53
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1865463273688771626
-    second: _Group_ 2_0
+      213: 3298423446373911121
+    second: Bubble_Banh_Ran_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: _Group_ 2_0
+      name: Bubble_Banh_Ran_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 128
-        height: 162
+        y: 3
+        width: 251
+        height: 245
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a2ca1c9b6f473e910800000000000000
-      internalID: 1865463273688771626
+      spriteID: 15acfef06aa56cd20800000000000000
+      internalID: 3298423446373911121
       vertices: []
       indices: 
       edges: []
@@ -174,7 +174,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      _Group_ 2_0: 1865463273688771626
+      Bubble_Banh_Ran_0: 3298423446373911121
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
