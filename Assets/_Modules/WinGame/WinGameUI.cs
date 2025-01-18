@@ -42,7 +42,8 @@ public class WinGameUI : MonoBehaviour
         // }
 
         int indexLevel = GameManager.Instance.getCurrentLevel();
-        GameManager.Instance.onLoadLevel(++indexLevel);
+        //GameManager.Instance.onLoadLevel(++indexLevel);
+        GameManager.Instance.onLoadLevelAndDisableLevels(++indexLevel);
         Loader.Instance.LoadWithFade(SceneName.GameScene);
     }
 

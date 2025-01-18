@@ -59,15 +59,38 @@ public class GameManager : Singleton<GameManager>
         }
 
         MaxPoint = levels[currentLevel].MaxPoint;
+        currentPoint = 0;
 
         foreach (var level in levels)
         {
+            Debug.Log("level: " + level);
             level.gameObject.SetActive(false);
         }
 
         levels[currentLevel].gameObject.SetActive(true);
         EventDispatcher.Dispatch(new EventDefine.OnUpdateProgressBar());
     }
+
+    public void onLoadLevelAndDisableLevels(int levelindex)
+    {
+        if (currentLevel <= maxCurrentLevel)
+        {
+            Debug.Log("load level" + levelindex);
+            currentLevel = levelindex;
+        }
+
+        MaxPoint = levels[currentLevel].MaxPoint;
+        currentPoint = 0;
+
+        foreach (var level in levels)
+        {
+            Debug.Log("level: " + level);
+            level.gameObject.SetActive(false);
+        }
+
+        EventDispatcher.Dispatch(new EventDefine.OnUpdateProgressBar());
+    }
+
 
     public int getCurrentLevel()
     {
@@ -104,6 +127,7 @@ public class GameManager : Singleton<GameManager>
         });
     }
 
+    
     void setDefualtPoint()
     {
         currentPoint = 0;

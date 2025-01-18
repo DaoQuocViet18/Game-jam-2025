@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 67c8ee83230a3934d9d807c0ae303787
+guid: 8162349d5babd524b92faeb9e0a981cc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 567963424932683608
-    second: Clock_0_0
+      213: -5616327841021157477
+    second: Lady_Banh_Ran_Happy_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +139,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Clock_0_0
+      name: Lady_Banh_Ran_Happy_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 93
-        height: 131
+        x: 1687
+        y: 649
+        width: 435
+        height: 497
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +154,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 85fd68cc9bfc1e700800000000000000
-      internalID: 567963424932683608
+      spriteID: b9f1ccdc59bce02b0800000000000000
+      internalID: -5616327841021157477
       vertices: []
       indices: 
       edges: []
@@ -173,8 +173,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Clock_0_0: 567963424932683608
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
