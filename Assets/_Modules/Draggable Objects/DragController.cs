@@ -27,7 +27,7 @@ public class DragController : MonoBehaviour
         currentMaxSortingOrder++;
         spriteRenderer.sortingOrder = currentMaxSortingOrder;
 
-        AudioManager.Instance.PlaySoundWithRandomPitch(GameAudioClip.POP);
+        AudioManager.Instance.PlaySoundWithRandomPitch(GameAudioClip.POP_SOUND_EFFECT);
     }
 
     void OnMouseDrag()

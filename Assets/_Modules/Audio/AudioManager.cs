@@ -7,6 +7,10 @@ public enum GameAudioClip
     POP,
     WOA,
     COLLECT,
+    BACKGROUND_MUSIC,
+    REWARD_SOUND,
+    BUBBLING_SOUND,
+    POP_SOUND_EFFECT,
 }
 
 public class AudioManager : Singleton<AudioManager> 

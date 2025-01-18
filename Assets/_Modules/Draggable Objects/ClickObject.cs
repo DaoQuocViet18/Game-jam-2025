@@ -33,7 +33,7 @@ public class ClickObject : MonoBehaviour
 
             EventDispatcher.Dispatch(new EventDefine.OnIncreasePoint());
 
-            AudioManager.Instance.PlaySoundWithRandomPitch(GameAudioClip.POP);
+            AudioManager.Instance.PlaySoundWithRandomPitch(GameAudioClip.POP_SOUND_EFFECT);
 
             if (showObject != null) showObject.SetActive(true);
 
